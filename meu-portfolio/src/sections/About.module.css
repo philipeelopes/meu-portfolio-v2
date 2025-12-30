@@ -1,7 +1,7 @@
 .about {
   position: relative;
   min-height: 100vh;
-  padding: 6rem 2rem;
+  height: auto;
   max-width: 85%;
   margin: 0 auto;
   font-family: Arial, Helvetica, sans-serif;
@@ -10,9 +10,7 @@
   flex-direction: column;
   justify-content: center;
 
-
-
-
+ 
 
 }
 
@@ -45,7 +43,7 @@
     width: 35vw; /* Ajuste o tamanho que desejar */
     height: 80vh;
     opacity: .8; /* Opcional: deixa meio transparente para não distrair */
-    z-index: 100;   /* Garante que fique atrás ou na frente conforme desejar */
+    z-index: 1;   /* Garante que fique atrás ou na frente conforme desejar */
     pointer-events: none; /* Evita que a imagem atrapalhe cliques no texto */
     
   
@@ -115,22 +113,16 @@
   }
 }
 
-.sectionDividerFX {
-  position: relative;
-  margin: 10rem 0;
-}
 
-.sectionDividerFX span {
-  display: block;
-  height: 1px;
-  width: 100%;
-  background: linear-gradient(to right,
-      transparent,
-      rgba(255, 255, 255, .35),
-      transparent);
-}
 
 @media (max-width: 768px) {
+
+
+  .about {
+  position: relative;
+  min-height: 94vh;
+}
+
 
   .about h2{
     font-size: 3rem;
@@ -144,7 +136,7 @@
   .info {
 
   width: 100%;
-  min-height: calc(100vh - 12rem);
+  
 
   display: flex;
   align-items: start;
@@ -154,22 +146,13 @@
 .about .city{
   
   
-  font-size: 1.1rem;
+  font-size: 0.9rem;
 }
 
    .cornerImage {
         display: none;
     }
 
-@keyframes expandLine {
-   0% {
-    transform: none;
-    opacity: none;
-  }
-  100% {
-    transform: none;
-    opacity: none;
-  }
 
-}
+
 }

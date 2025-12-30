@@ -1,23 +1,82 @@
+import { useEffect, useRef } from "react";
 import styles from "./Hero.module.css"
+
 import { FaLinkedin, FaGithub, FaWhatsapp, FaInstagram } from "react-icons/fa";
 
 
 export default function Hero() {
+    const heroRef = useRef<HTMLElement | null>(null);
+
+    useEffect(() => {
+
+  const hero = heroRef.current;
+  if (!hero) return;
+
+  const onMouseMove = (e: MouseEvent) => {
+    const x = (e.clientX / window.innerWidth) * 100;
+    const y = (e.clientY / window.innerHeight) * 100;
+
+    hero.style.setProperty("--glow-x", `${x}%`);
+    hero.style.setProperty("--glow-y", `${y}%`);
+  };
+
+  window.addEventListener("mousemove", onMouseMove);
+
+  return () => {
+    window.removeEventListener("mousemove", onMouseMove);
+  };
+}, []);
+
+
+
+
+//animação suave mouse
+useEffect(() => {
+  const hero = heroRef.current;
+  if (!hero) return;
+
+  
+
+  let currentX = 0;
+  let currentY = 0;
+  let targetX = 0;
+  let targetY = 0;
+
+  
+
+  const onMouseMove = (e: MouseEvent) => {
+    const rect = hero.getBoundingClientRect();
+    targetX = (e.clientX - rect.left) / rect.width - 0.5;
+    targetY = (e.clientY - rect.top) / rect.height - 0.5;
+  };
+
+  const animate = () => {
+    currentX += (targetX - currentX) * 0.08;
+    currentY += (targetY - currentY) * 0.08;
+
+    hero.style.setProperty(
+      "--grid-transform",
+      `rotateX(${currentY * -10}deg) rotateY(${currentX * 10}deg)`
+    );
+
+    requestAnimationFrame(animate);
+  };
+
+  hero.addEventListener("mousemove", onMouseMove);
+  animate();
+
+  return () => {
+    hero.removeEventListener("mousemove", onMouseMove);
+  };
+}, []);
+
+
+
     return (
-        <section className={styles.hero}>
-
-            <video
-                className={styles.video}
-                src="videos/fundo.mp4"
-                autoPlay
-                loop
-                muted
-                playsInline
-            />
-
-
-
-
+        <section  ref={heroRef}  className={styles.hero}>
+        <div className={styles.bg} />
+          <div className={styles.glow} />
+              
             <div className={styles.content}>
 
 

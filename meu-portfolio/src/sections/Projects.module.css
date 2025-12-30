@@ -1,6 +1,6 @@
 .projects {
   
-  padding: 4rem 10rem;
+  padding: 0rem 7rem;
   display: flex;
   flex-direction: column;
   gap: 3rem;
@@ -13,87 +13,82 @@
   color: #dce0e6;
 }
 
-.swiper {
+.swiperP {
   width: 100%;
   padding: 1rem 0 3rem;
-  overflow: visible;
+  overflow: visible ;
 }
 
-.swiper :global(.swiper-slide) {
+.swiperP :global(.swiper-slide) {
   display: flex;
   justify-content: center;
   transition: transform 0.35s ease, filter 0.35s ease;
 }
 
- .swiper:hover :global(.swiper-slide) {
+ .swiperP:hover :global(.swiper-slide) {
     transform: scale(0.92);
     filter: brightness(0.85);
   }
 
   
-  .swiper :global(.swiper-slide:hover) {
-    transform: scale(1.02);
+  .swiperP :global(.swiper-slide:hover) {
+    transform: scale(1.01);
     filter: brightness(1);
     z-index: 2;
   }
-.swiper :global(.swiper-button-prev),
-.swiper :global(.swiper-button-next) {
+  
+.swiperP :global(.swiper-button-prev),
+.swiperP :global(.swiper-button-next) {
   color: #dce0e6;
   width: 48px;
   height: 48px;
 }
 
 /* mover para os cantos */
-.swiper :global(.swiper-button-prev) {
+.swiperP :global(.swiper-button-prev) {
   left: -10px;
 }
 
-.swiper :global(.swiper-button-next) {
+.swiperP :global(.swiper-button-next) {
   right: -10px;
 }
 
-/* esconder setas internas dos cards (se existirem) */
-:global(.card) button,
-:global(.card) .arrow,
-:global(.card) svg {
-  pointer-events: none;
+
+:global(.swiper .swiper-pagination-bullet) {
+  width: 12px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: rgba(255,255,255,0.3);
+  margin: 0 4px;
+  transition: all 0.3s ease;
+}
+
+:global(.swiper .swiper-pagination-bullet-active) {
+  width: 24px;
+  background-color: #ffffff;
 }
 
 
-.sectionDividerFX {
-  position: relative;
- 
-}
 
-.sectionDividerFX span {
-  display: block;
-  height: 1px;
-  width: 100%;
-  background: linear-gradient(
-    to right,
-    transparent,
-    rgba(255,255,255,.35),
-    transparent
-  );
 
- 
-}
 
 @media (max-width: 768px) {
 
-    .projects {
+  .projects {
+   
     padding: 3rem 0;
   }
 
-  .swiper {
+  .swiperP {
     max-width: 80%;
+    height: 90vh;
   }
 
-  .swiper :global(.swiper-slide) {
+  .swiperP :global(.swiper-slide) {
     justify-content: center;
   }
-    .swiper :global(.swiper-button-prev),
-  .swiper :global(.swiper-button-next) {
+    .swiperP :global(.swiper-button-prev),
+  .swiperP :global(.swiper-button-next) {
     display: none;
   }
   }

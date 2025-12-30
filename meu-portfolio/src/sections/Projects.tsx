@@ -38,7 +38,7 @@ export default function Projects() {
           0: { slidesPerView: 1 },
           768: { slidesPerView: 2 },
         }}
-        className={styles.swiper}
+        className={styles.swiperP}
       >
 
 

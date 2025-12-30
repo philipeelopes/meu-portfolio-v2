@@ -6,21 +6,14 @@
 #1f1f20
 */
 
-body {
-  /*background: radial-gradient(
-    circle at top left,
-    #0f172a,
-    #020617
-  );*/
-  background: #060607;
-  
-}
+
 
 
 .hero {
 
     position: relative;
     min-height: 100vh;
+    
     padding-left: 8rem;
     display: flex;
     flex-direction: column;
@@ -28,31 +21,96 @@ body {
     align-items: start;
     gap: 1rem;
     overflow: hidden;
+
+    perspective: 900px;
 }
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -50%;
+
+  background:
+    linear-gradient(#567ebb33 1px, transparent 1px),
+    linear-gradient(90deg, #567ebb33 1px, transparent 1px);
+
+  background-size: 40px 40px;
+  transform-origin: center;
+
+  animation: gridMove 20s linear infinite;
+
+  z-index: 0;
+
+  transition: transform 0.2s ease-out;
+
+ transform:
+    translateY(var(--bg-offset, 0px))
+    var(--grid-transform, rotateX(0deg) rotateY(0deg));
+    
+
+}
+
+@keyframes gridMove {
+  from { background-position: 0 0; }
+  to { background-position: 400px 400px; }
+}
+
+
+
+
 
 .hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 0;
+  content: "";
+  position: absolute;
+  inset: -50%;
+  background:
+    linear-gradient(#567ebb22 1px, transparent 1px),
+    linear-gradient(90deg, #567ebb22 1px, transparent 1px);
+  background-size: 80px 80px;
+
+  transform-origin: center;
+  animation: gridMoveReverse 40s linear infinite;
+  z-index: 0;
+
+  transform:
+    translateZ(-120px)
+    var(--grid-transform, rotateX(0deg) rotateY(0deg));
+    
+
 }
 
-.video {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
+@keyframes gridMoveReverse {
+  from { background-position: 400px 400px; }
+  to { background-position: 0 0; }
 }
+
+.glow {
+  
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+
+  background: radial-gradient(
+    400px circle at var(--glow-x, 50%) var(--glow-y, 50%),
+    rgba(86, 126, 187, 0.18),
+    transparent 60%
+  );
+
+  transition: background-position 0.08s linear;
+}
+
+
+
+
+
 
 
 
 .content {
     position: relative;
-    z-index: 1;
-    height: 100vh;
+    z-index: 2;
+    min-height: 100%;
+    height: auto;
     padding: 4rem 2rem;
     display: flex;
     align-items: start;
@@ -152,6 +210,10 @@ body {
 
     .name span{
         font-size: 5rem;
+    }
+    
+    .glow{
+        display: none;
     }
 
 
