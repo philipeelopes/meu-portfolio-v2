@@ -1,0 +1,158 @@
+/*paleta
+#2b4c7e
+#567ebb
+#606d80
+#dce0e6
+#1f1f20
+*/
+
+body {
+  /*background: radial-gradient(
+    circle at top left,
+    #0f172a,
+    #020617
+  );*/
+  background: #060607;
+  
+}
+
+
+.hero {
+
+    position: relative;
+    min-height: 100vh;
+    padding-left: 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 1rem;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+.video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+
+
+.content {
+    position: relative;
+    z-index: 1;
+    height: 100vh;
+    padding: 4rem 2rem;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    color: #fff;
+}
+
+.name {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    color: #dce0e6;
+    font-size: 4rem;
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.name span {
+    font-size: 8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.hero h2 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: 0.3rem;
+    font-weight: 100;
+    font-size: 2rem;
+    color: #567ebb;
+}
+
+.hero p {
+
+    color: #dce0e6;
+    font-size: 1.2rem;
+
+}
+
+.actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.actions a {
+    padding: 0.75rem 1.5rem;
+    border: 1px solid #567ebb62;
+    border-radius: 40px;
+    background: transparent;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.5s ease;
+}
+
+.actions a:hover {
+    background: #567ebb;
+    transform: scale(1.1);
+    transition: all 0.5s ease;
+}
+
+.socials {
+    display: flex;
+    gap: 2.6rem;
+    padding-bottom: 4rem;
+}
+
+.socials a {
+    font-size: 1.8rem;
+    color: #fff;
+    transition: transform 0.3s ease, color 0.3 ease;
+}
+
+.socials a:hover{
+    color: #567ebb;
+    transform: translateY(-4px) scale(1.1);
+}
+
+
+@media (max-width: 768px) {
+
+
+    
+.hero {
+
+   
+    padding-left: 0.5rem;
+    align-items: center;
+    gap: 1rem;
+    overflow: hidden;
+}
+
+    .name{
+        font-size: 3rem;
+    }
+
+    .name span{
+        font-size: 5rem;
+    }
+
+
+}

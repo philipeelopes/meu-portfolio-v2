@@ -1,0 +1,175 @@
+.about {
+  position: relative;
+  min-height: 100vh;
+  padding: 6rem 2rem;
+  max-width: 85%;
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+
+
+
+
+}
+
+.about h2 {
+  color: #ffffff;
+  font-size: 5rem;
+  font-weight: 300;
+  margin-bottom: 10rem;
+  border-bottom: 1px solid #567ebb;
+
+
+
+
+}
+
+.about p {
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: #ffffff;
+
+
+
+}
+
+.cornerImage {
+    position: absolute;
+    bottom: 1;    /* Alinha no fundo */
+    right: 0;     /* Alinha na direita */
+    width: 35vw; /* Ajuste o tamanho que desejar */
+    height: 80vh;
+    opacity: .8; /* Opcional: deixa meio transparente para não distrair */
+    z-index: 100;   /* Garante que fique atrás ou na frente conforme desejar */
+    pointer-events: none; /* Evita que a imagem atrapalhe cliques no texto */
+    
+  
+}
+
+
+
+
+.info {
+
+  width: 500px;
+  min-height: calc(100vh - 12rem);
+
+  display: flex;
+  flex-direction: column;
+
+
+}
+
+.about .city {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  gap: 12px; 
+  
+
+
+  margin-top: auto; 
+  margin-bottom: 0;
+  
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+
+.about .city::before,
+.about .city::after {
+  content: "";
+  height: 3px;
+  width: 30px; 
+  background-color: #567ebb;
+  
+  animation: expandLine 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
+  
+ 
+  
+}
+
+
+.about .city::before {
+  transform-origin: right;
+}
+
+.about .city::after {
+  transform-origin: left;
+}
+
+
+@keyframes expandLine {
+  0% {
+    transform: scaleX(0);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+.sectionDividerFX {
+  position: relative;
+  margin: 10rem 0;
+}
+
+.sectionDividerFX span {
+  display: block;
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(to right,
+      transparent,
+      rgba(255, 255, 255, .35),
+      transparent);
+}
+
+@media (max-width: 768px) {
+
+  .about h2{
+    font-size: 3rem;
+     margin-bottom: 2rem;
+  }
+
+  .about p {
+    font-size: 1.2rem;
+  }
+
+  .info {
+
+  width: 100%;
+  min-height: calc(100vh - 12rem);
+
+  display: flex;
+  align-items: start;
+  justify-content: center;
+}
+
+.about .city{
+  
+  
+  font-size: 1.1rem;
+}
+
+   .cornerImage {
+        display: none;
+    }
+
+@keyframes expandLine {
+   0% {
+    transform: none;
+    opacity: none;
+  }
+  100% {
+    transform: none;
+    opacity: none;
+  }
+
+}
+}

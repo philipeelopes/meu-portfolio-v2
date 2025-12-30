@@ -1,0 +1,101 @@
+.projects {
+  
+  padding: 4rem 10rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  overflow: hidden; 
+}
+
+.projects h2 {
+  text-align: center;
+  font-size: 3rem;
+  color: #dce0e6;
+}
+
+.swiper {
+  width: 100%;
+  padding: 1rem 0 3rem;
+  overflow: visible;
+}
+
+.swiper :global(.swiper-slide) {
+  display: flex;
+  justify-content: center;
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+ .swiper:hover :global(.swiper-slide) {
+    transform: scale(0.92);
+    filter: brightness(0.85);
+  }
+
+  
+  .swiper :global(.swiper-slide:hover) {
+    transform: scale(1.02);
+    filter: brightness(1);
+    z-index: 2;
+  }
+.swiper :global(.swiper-button-prev),
+.swiper :global(.swiper-button-next) {
+  color: #dce0e6;
+  width: 48px;
+  height: 48px;
+}
+
+/* mover para os cantos */
+.swiper :global(.swiper-button-prev) {
+  left: -10px;
+}
+
+.swiper :global(.swiper-button-next) {
+  right: -10px;
+}
+
+/* esconder setas internas dos cards (se existirem) */
+:global(.card) button,
+:global(.card) .arrow,
+:global(.card) svg {
+  pointer-events: none;
+}
+
+
+.sectionDividerFX {
+  position: relative;
+ 
+}
+
+.sectionDividerFX span {
+  display: block;
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255,255,255,.35),
+    transparent
+  );
+
+ 
+}
+
+@media (max-width: 768px) {
+
+    .projects {
+    padding: 3rem 0;
+  }
+
+  .swiper {
+    max-width: 80%;
+  }
+
+  .swiper :global(.swiper-slide) {
+    justify-content: center;
+  }
+    .swiper :global(.swiper-button-prev),
+  .swiper :global(.swiper-button-next) {
+    display: none;
+  }
+  }
+
+
