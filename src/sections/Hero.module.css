@@ -22,6 +22,7 @@
     gap: 1rem;
     overflow: hidden;
     perspective: 900px;
+
 }
 
 .hero::before {
@@ -44,6 +45,10 @@
 
     transform:
         translateY(var(--bg-offset, 0px)) var(--grid-transform, rotateX(0deg) rotateY(0deg));
+
+
+
+
 
 
 }
@@ -79,7 +84,11 @@
         translateZ(-120px) var(--grid-transform, rotateX(0deg) rotateY(0deg));
 
 
+     
+
 }
+
+
 
 @keyframes gridMoveReverse {
     from {
@@ -102,8 +111,30 @@
             transparent 60%);
 
     transition: background-position 0.08s linear;
+
+     background: radial-gradient(
+        400px circle at var(--glow-x, 50%) var(--glow-y, 50%),
+        rgba(86, 126, 187, 0.25),
+        transparent 65%
+    );
+
+  
 }
 
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.delay1 { transition-delay: 0.2s; }
+.delay2 { transition-delay: 0.4s; }
+.delay3 { transition-delay: 0.6s; }
 
 
 

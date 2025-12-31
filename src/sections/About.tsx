@@ -1,7 +1,14 @@
 import styles from "./About.module.css"
 
+
 export default function About() {
+
     return (
+
+        
+
+
+
         <section className={styles.about}>
 
             <img src="imagens/fundo5.png" alt="foto decorativa"  className={styles.cornerImage}/>
