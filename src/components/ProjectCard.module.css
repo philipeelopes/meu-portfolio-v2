@@ -7,7 +7,6 @@
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
      transform-style: preserve-3d;
-    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 16px; /* Bordas mais arredondadas */
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     display: flex;
@@ -16,27 +15,32 @@
     overflow: hidden;
     transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
     will-change: transform; 
+
     /* Gradiente animado na borda */
-    background: linear-gradient(135deg, rgba(86, 126, 187, 0.1), rgba(255, 255, 255, 0.05));
-    background-clip: padding-box;
-    border: 2px solid transparent;
     position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: border 0.3s ease;
+}
+
+:global(.swiper-slide-active) .card {
+  border: 2px solid #567ebb;
+  box-shadow: 0 0 24px rgba(86, 126, 187, 0.35);
 }
 
 .card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    background: linear-gradient(135deg, #567ebb, rgba(255, 255, 255, 0.2));
-    background-clip: padding-box;
-    padding: 2px;
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask-composite: exclude;
-    -webkit-mask-composite: xor;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.4s ease;
+   content: "";
+  position: absolute;
+  inset: -150%;
+  background: linear-gradient(
+    120deg,
+    transparent 40%,
+    rgba(86, 126, 187, 0.35),
+    transparent 60%
+    );
+  transform: translateX(-50%) translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
 }
 
 .card:hover {
@@ -46,7 +50,17 @@
 }
 
 .card:hover::before {
-    opacity: 1; /* Mostra o gradiente animado no hover */
+    opacity: 0.6; 
+     animation: shineMove 5s linear infinite;
+}
+
+@keyframes shineMove {
+  from {
+    transform: translateX(-60%) translateY(-60%);
+  }
+  to {
+    transform: translateX(60%) translateY(60%);
+  }
 }
 
 .card::after {

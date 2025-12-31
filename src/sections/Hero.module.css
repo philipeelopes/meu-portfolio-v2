@@ -13,7 +13,7 @@
 
     position: relative;
     min-height: 100vh;
-    
+
     padding-left: 8rem;
     display: flex;
     flex-direction: column;
@@ -21,38 +21,45 @@
     align-items: start;
     gap: 1rem;
     overflow: hidden;
-
     perspective: 900px;
+    position: sticky;
+    top: 0;
+    height: 400px;
+    z-index: 1;
 }
 
 .hero::before {
-  content: "";
-  position: absolute;
-  inset: -50%;
+    content: "";
+    position: absolute;
+    inset: -50%;
 
-  background:
-    linear-gradient(#567ebb33 1px, transparent 1px),
-    linear-gradient(90deg, #567ebb33 1px, transparent 1px);
+    background:
+        linear-gradient(#567ebb33 1px, transparent 1px),
+        linear-gradient(90deg, #567ebb33 1px, transparent 1px);
 
-  background-size: 40px 40px;
-  transform-origin: center;
+    background-size: 40px 40px;
+    transform-origin: center;
 
-  animation: gridMove 20s linear infinite;
+    animation: gridMove 20s linear infinite;
 
-  z-index: 0;
+    z-index: 0;
 
-  transition: transform 0.2s ease-out;
+    transition: transform 0.2s ease-out;
 
- transform:
-    translateY(var(--bg-offset, 0px))
-    var(--grid-transform, rotateX(0deg) rotateY(0deg));
-    
+    transform:
+        translateY(var(--bg-offset, 0px)) var(--grid-transform, rotateX(0deg) rotateY(0deg));
+
 
 }
 
 @keyframes gridMove {
-  from { background-position: 0 0; }
-  to { background-position: 400px 400px; }
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 400px 400px;
+    }
 }
 
 
@@ -60,43 +67,45 @@
 
 
 .hero::after {
-  content: "";
-  position: absolute;
-  inset: -50%;
-  background:
-    linear-gradient(#567ebb22 1px, transparent 1px),
-    linear-gradient(90deg, #567ebb22 1px, transparent 1px);
-  background-size: 80px 80px;
+    content: "";
+    position: absolute;
+    inset: -50%;
+    background:
+        linear-gradient(#567ebb22 1px, transparent 1px),
+        linear-gradient(90deg, #567ebb22 1px, transparent 1px);
+    background-size: 80px 80px;
 
-  transform-origin: center;
-  animation: gridMoveReverse 40s linear infinite;
-  z-index: 0;
+    transform-origin: center;
+    animation: gridMoveReverse 40s linear infinite;
+    z-index: 0;
 
-  transform:
-    translateZ(-120px)
-    var(--grid-transform, rotateX(0deg) rotateY(0deg));
-    
+    transform:
+        translateZ(-120px) var(--grid-transform, rotateX(0deg) rotateY(0deg));
+
 
 }
 
 @keyframes gridMoveReverse {
-  from { background-position: 400px 400px; }
-  to { background-position: 0 0; }
+    from {
+        background-position: 400px 400px;
+    }
+
+    to {
+        background-position: 0 0;
+    }
 }
 
 .glow {
-  
-  inset: 0;
-  pointer-events: none;
-  z-index: 1;
 
-  background: radial-gradient(
-    400px circle at var(--glow-x, 50%) var(--glow-y, 50%),
-    rgba(86, 126, 187, 0.18),
-    transparent 60%
-  );
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
 
-  transition: background-position 0.08s linear;
+    background: radial-gradient(400px circle at var(--glow-x, 50%) var(--glow-y, 50%),
+            rgba(86, 126, 187, 0.18),
+            transparent 60%);
+
+    transition: background-position 0.08s linear;
 }
 
 
@@ -185,7 +194,7 @@
     transition: transform 0.3s ease, color 0.3 ease;
 }
 
-.socials a:hover{
+.socials a:hover {
     color: #567ebb;
     transform: translateY(-4px) scale(1.1);
 }
@@ -194,25 +203,27 @@
 @media (max-width: 768px) {
 
 
-    
-.hero {
 
-   
-    padding-left: 0.5rem;
-    align-items: center;
-    gap: 1rem;
-    overflow: hidden;
-}
+    .hero {
 
-    .name{
+
+        padding-left: 0.5rem;
+        align-items: center;
+        gap: 1rem;
+        overflow: hidden;
+        border-radius: 0;
+
+    }
+
+    .name {
         font-size: 3rem;
     }
 
-    .name span{
+    .name span {
         font-size: 5rem;
     }
-    
-    .glow{
+
+    .glow {
         display: none;
     }
 
