@@ -2,7 +2,7 @@
   "name": "meu-portfolio",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://philipeelopes.github.io/meu-portfolio",
+  "homepage": "https://philipeelopes.github.io/meu-portfolio-v2",
   "type": "module",
   "scripts": {
     "dev": "vite",
