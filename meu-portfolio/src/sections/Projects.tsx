@@ -46,7 +46,12 @@ export default function Projects() {
 
         {projects.map(({ id, ...project }) => (
           <SwiperSlide key={id}>
-            <ProjectCard {...project} />
+            
+               <ProjectCard {...project} />
+          
+             
+           
+            
           </SwiperSlide>
         ))}
 

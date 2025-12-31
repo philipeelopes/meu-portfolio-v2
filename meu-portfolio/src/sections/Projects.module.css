@@ -25,17 +25,9 @@
   transition: transform 0.35s ease, filter 0.35s ease;
 }
 
- .swiperP:hover :global(.swiper-slide) {
-    transform: scale(0.92);
-    filter: brightness(0.85);
-  }
 
-  
-  .swiperP :global(.swiper-slide:hover) {
-    transform: scale(1.01);
-    filter: brightness(1);
-    z-index: 2;
-  }
+
+
   
 .swiperP :global(.swiper-button-prev),
 .swiperP :global(.swiper-button-next) {

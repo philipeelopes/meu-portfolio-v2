@@ -1,14 +1,16 @@
 .card {
     width: 90%;
-    height: auto; /* Mudei para auto para se ajustar ao conteúdo */
+    height: auto; 
     position: relative;
     padding: 2rem;
-    background: rgba(255, 255, 255, 0.05); /* Mais sutil */
+    background: rgba(255, 255, 255, 0.05); 
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-     transform-style: preserve-3d;
+     
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 16px; /* Bordas mais arredondadas */
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: border 0.3s ease;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     display: flex;
     flex-direction: column;
@@ -16,6 +18,7 @@
     overflow: hidden;
     transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
     will-change: transform; 
+
     /* Gradiente animado na borda */
     background: linear-gradient(135deg, rgba(86, 126, 187, 0.1), rgba(255, 255, 255, 0.05));
     background-clip: padding-box;
@@ -24,19 +27,23 @@
 }
 
 .card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    background: linear-gradient(135deg, #567ebb, rgba(255, 255, 255, 0.2));
-    background-clip: padding-box;
-    padding: 2px;
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask-composite: exclude;
-    -webkit-mask-composite: xor;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.4s ease;
+  
+content: "";
+  position: absolute;
+  inset: -150%;
+  background: linear-gradient(
+    120deg,
+    transparent 40%,
+    rgba(86, 126, 187, 0.35),
+    transparent 60%
+  );
+  transform: translateX(-50%) translateY(-50%);
+  opacity: 6;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+   animation: shineMove 6s linear infinite;
+
+ 
 }
 
 .card:hover {
@@ -46,7 +53,17 @@
 }
 
 .card:hover::before {
-    opacity: 1; /* Mostra o gradiente animado no hover */
+    opacity: 1; 
+     animation: shineMove 2.2s ease-out forwards;
+}
+
+@keyframes shineMove {
+  from {
+    transform: translateX(-60%) translateY(-60%);
+  }
+  to {
+    transform: translateX(60%) translateY(60%);
+  }
 }
 
 .card::after {
@@ -61,11 +78,16 @@
 
 
 
+
+
+
 .imageContainer {
     position: relative;
     border-radius: 12px;
     overflow: hidden;
 }
+
+
 
 .swiperProjects {
     width: 100%;
@@ -78,12 +100,15 @@
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
+  
 }
 
 .swiperProjects img:hover {
     transform: scale(1.05); /* Zoom sutil na imagem */
    
 }
+
+
 
 .overlay {
     position: absolute;

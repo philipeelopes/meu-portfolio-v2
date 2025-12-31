@@ -37,10 +37,12 @@ export default function ProjectCard({
    };
 
    return (
+    
       <div className={`${styles.card} card`}>
          {/* Carrossel com overlay sutil */}
          <div className={styles.imageContainer}>
-            <Swiper
+           
+               <Swiper
                modules={[Pagination, Navigation]}
                pagination={{ clickable: true }}
                navigation
@@ -54,6 +56,8 @@ export default function ProjectCard({
                   </SwiperSlide>
                ))}
             </Swiper>
+          
+            
          </div>
 
          {/* Conteúdo */}
@@ -79,5 +83,6 @@ export default function ProjectCard({
             </div>
          </div>
       </div>
+      
    );
 }
