@@ -37,13 +37,13 @@
 
 .cornerImage {
     position: absolute;
-    bottom: 1;    /* Alinha no fundo */
-    right: 0;     /* Alinha na direita */
-    width: 35vw; /* Ajuste o tamanho que desejar */
+    bottom: 1;   
+    right: 0;    
+    width: 35vw; 
     height: 80vh;
-    opacity: .8; /* Opcional: deixa meio transparente para não distrair */
-    z-index: 1;   /* Garante que fique atrás ou na frente conforme desejar */
-    pointer-events: none; /* Evita que a imagem atrapalhe cliques no texto */
+    opacity: .8; 
+    z-index: 1;   
+    pointer-events: none; 
     
   
 }
@@ -125,6 +125,8 @@
   .about {
   position: relative;
   min-height: 94vh;
+  padding: 1.5rem;
+  
 }
 
 

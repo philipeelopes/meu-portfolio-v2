@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import styles from "./Hero.module.css"
 
+
 import { FaLinkedin, FaGithub, FaWhatsapp, FaInstagram } from "react-icons/fa";
 
 

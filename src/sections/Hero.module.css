@@ -37,14 +37,15 @@
     background-size: 40px 40px;
     transform-origin: center;
 
-    animation: gridMove 20s linear infinite;
-
     z-index: 0;
 
     transition: transform 0.2s ease-out;
 
     transform:
         translateY(var(--bg-offset, 0px)) var(--grid-transform, rotateX(0deg) rotateY(0deg));
+
+    animation: gridMove 20s linear infinite, fadeIn 2s ease-out;
+
 
 
 
@@ -77,14 +78,17 @@
     background-size: 80px 80px;
 
     transform-origin: center;
-    animation: gridMoveReverse 40s linear infinite;
+
     z-index: 0;
 
     transform:
         translateZ(-120px) var(--grid-transform, rotateX(0deg) rotateY(0deg));
 
+    animation: gridMoveReverse 20s linear infinite, fadeIn 2s ease-out;
 
-     
+
+
+
 
 }
 
@@ -112,29 +116,53 @@
 
     transition: background-position 0.08s linear;
 
-     background: radial-gradient(
-        400px circle at var(--glow-x, 50%) var(--glow-y, 50%),
-        rgba(86, 126, 187, 0.25),
-        transparent 65%
-    );
+    background: radial-gradient(400px circle at var(--glow-x, 50%) var(--glow-y, 50%),
+            rgba(86, 126, 187, 0.25),
+            transparent 65%);
 
-  
+    animation: pulse 4s ease-in-out infinite;
+
+
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 0.25;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
 }
 
 .reveal {
     opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s ease;
+    transform: translateY(40px) scale(0.9) rotateX(10deg);
+    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .reveal.show {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1) rotateX(0deg);
 }
 
-.delay1 { transition-delay: 0.2s; }
-.delay2 { transition-delay: 0.4s; }
-.delay3 { transition-delay: 0.6s; }
+.delay1 {
+    transition-delay: 0.1s;
+}
+
+.delay2 {
+    transition-delay: 0.3s;
+}
+
+.delay3 {
+    transition-delay: 0.5s;
+}
+
+.delay4 {
+    transition-delay: 0.7s;
+}
 
 
 
@@ -219,12 +247,26 @@
     font-size: 1.8rem;
     color: #fff;
     transition: transform 0.3s ease, color 0.3 ease;
+    animation: float 3s ease-in-out infinite;
 }
 
 .socials a:hover {
     color: #567ebb;
     transform: translateY(-4px) scale(1.1);
 }
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
 
 
 @media (max-width: 768px) {
