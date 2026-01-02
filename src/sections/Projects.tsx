@@ -14,6 +14,8 @@ import styles from "./Projects.module.css";
 
 export default function Projects() {
 
+
+
  
 
 
@@ -45,9 +47,9 @@ export default function Projects() {
 
 
 
-        {projects.map(({ id, ...project }) => (
+        {projects.map(({ id, ...project }, index ) => (
           <SwiperSlide key={id}>
-            <ProjectCard {...project} />
+            <ProjectCard {...project} index={index} />
           </SwiperSlide>
         ))}
 

@@ -10,8 +10,42 @@
   flex-direction: column;
   justify-content: center;
   padding-left: 6rem;
+
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+
 }
 
+.aboutVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.textReveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.textVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* delays */
+.delay1 {
+  transition-delay: 0.2s;
+}
+.delay2 {
+  transition-delay: 0.6s;
+}
+.delay3 {
+  transition-delay: 1s;
+}
+.delay4 {
+  transition-delay: 1.4s;
+}
 
 .about h2 {
   color: #ffffff;

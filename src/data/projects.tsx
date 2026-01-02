@@ -20,7 +20,7 @@ export const projects = [
     repo: "https://github.com/philipeelopes/todo-list",
     demo: "https://philipeelopes.github.io/todo-list",
   },
-  {
+  {  
     id: 2,
     title: "Portfólio Pessoal",
     description:

@@ -107,7 +107,7 @@ export default function StarCanvas({
 
         this.pulse += 0.05;
         this.currentBrightness =
-          this.brightness + Math.sin(this.pulse) * 0.3;
+        this.brightness + Math.sin(this.pulse) * 0.3;
       }
 
       draw() {

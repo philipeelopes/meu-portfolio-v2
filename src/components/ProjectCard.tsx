@@ -1,4 +1,5 @@
-import React from 'react'; 
+import React from 'react';
+import { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
@@ -11,6 +12,7 @@ import StarBackground from "./StarBackground";
 
 
 type ProjectCardProps = {
+   index: number;
    title: string;
    description: string;
    techs: string[];
@@ -19,7 +21,14 @@ type ProjectCardProps = {
    demo: string;
 };
 
+
+
 export default function ProjectCard({
+
+
+
+
+   index,
    title,
    description,
    techs,
@@ -27,6 +36,37 @@ export default function ProjectCard({
    repo,
    demo,
 }: ProjectCardProps) {
+
+
+/* ===============================
+     REVEAL ON SCROLL
+  =============================== */
+  const cardRef = useRef<HTMLDivElement | null>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const el = cardRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.unobserve(el); // anima só uma vez
+        }
+      },
+      {
+        threshold: 0.2,
+      }
+    );
+
+    observer.observe(el);
+
+    return () => observer.disconnect();
+  }, []);
+
+
+
    // Função para mapear techs a ícones
    const getTechIcon = (tech: string): React.ReactElement | null => { // React.ReactElement para mais compatibilidade
       const iconMap: { [key: string]: React.ReactElement } = {
@@ -34,12 +74,22 @@ export default function ProjectCard({
          JavaScript: <SiJavascript />,
          TypeScript: <SiTypescript />,
          // mais: ex. "CSS": <SiCss3 />, etc.
-      };
+      }; 
       return iconMap[tech] || null;
    };
 
    return (
-      <div className={`${styles.card} card`}>
+      <div
+      ref={cardRef}
+      className={`
+        ${styles.card}
+        ${styles.reveal}
+        ${index % 2 === 0 ? styles.fromLeft : styles.fromRight}
+        ${visible ? styles.revealVisible : ""}
+      `}
+    >
+
+
          {/* Carrossel com overlay sutil */}
          <div className={styles.imageContainer}>
             <Swiper
@@ -71,14 +121,14 @@ export default function ProjectCard({
                ))}
             </ul>
             <StarBackground
-                  count={100}
-                  maxDistance={100}
-                  mouseDistance={100}
-                  starColor="255,255,255"
-                  lineColor="100,150,255"
-                  background="#000000ff"
-                  speed={1}
-                />
+               count={100}
+               maxDistance={100}
+               mouseDistance={100}
+               starColor="255,255,255"
+               lineColor="100,150,255"
+               background="#000000ff"
+               speed={1}
+            />
 
             <div className={styles.links}>
                <a href={demo} target="_blank" className={styles.link}>
