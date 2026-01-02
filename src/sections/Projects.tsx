@@ -22,6 +22,7 @@ export default function Projects() {
       <div className={styles.sectionDividerFX}>
         <span />
       </div>
+     
       <h2>Projetos</h2>
 
 

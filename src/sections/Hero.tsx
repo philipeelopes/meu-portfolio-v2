@@ -3,6 +3,7 @@ import styles from "./Hero.module.css"
 
 
 import { FaLinkedin, FaGithub, FaWhatsapp, FaInstagram } from "react-icons/fa";
+import StarBackground from "../components/StarBackground";
 
 
 export default function Hero() {
@@ -40,101 +41,22 @@ export default function Hero() {
 
 
 
-  useEffect(() => {
-  const elements = document.querySelectorAll(".reveal");
-
-  const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        }
-      });
-    },
-    { threshold: 0.2 }
-  );
-
-  elements.forEach(el => observer.observe(el));
-
-  return () => observer.disconnect();
-}, []);
-
-
-
-
-
-
-
-
-
-
-  useEffect(() => {
-
-    const hero = heroRef.current;
-    if (!hero) return;
-
-    const onMouseMove = (e: MouseEvent) => {
-      const x = (e.clientX / window.innerWidth) * 100;
-      const y = (e.clientY / window.innerHeight) * 100;
-
-      hero.style.setProperty("--glow-x", `${x}%`);
-      hero.style.setProperty("--glow-y", `${y}%`);
-    };
-
-    window.addEventListener("mousemove", onMouseMove);
-
-    return () => {
-      window.removeEventListener("mousemove", onMouseMove);
-    };
-  }, []);
-
-
-
-
-  //animação suave mouse
-  useEffect(() => {
-    const hero = heroRef.current;
-    if (!hero) return;
-
-
-
-    let currentX = 0;
-    let currentY = 0;
-    let targetX = 0;
-    let targetY = 0;
-
-
-
-    const onMouseMove = (e: MouseEvent) => {
-      const rect = hero.getBoundingClientRect();
-      targetX = (e.clientX - rect.left) / rect.width - 0.5;
-      targetY = (e.clientY - rect.top) / rect.height - 0.5;
-    };
-
-    const animate = () => {
-      currentX += (targetX - currentX) * 0.08;
-      currentY += (targetY - currentY) * 0.08;
-
-      hero.style.setProperty(
-        "--grid-transform",
-        `rotateX(${currentY * -10}deg) rotateY(${currentX * 10}deg)`
-      );
-
-      requestAnimationFrame(animate);
-    };
-
-    hero.addEventListener("mousemove", onMouseMove);
-    animate();
-
-    return () => {
-      hero.removeEventListener("mousemove", onMouseMove);
-    };
-  }, []);
-
 
 
   return (
     <section ref={heroRef} className={styles.hero}>
+     
+       <StarBackground
+      count={200}
+      maxDistance={100}
+      mouseDistance={100}
+      starColor="255,255,255"
+      lineColor="100,150,255"
+      background="#000000ff"
+      speed={1}
+    />
+
+
       <div className={styles.bg} />
       <div className={styles.glow} />
 

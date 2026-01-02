@@ -12,7 +12,8 @@ import Footer from "./components/Footer";
 export default function App(){
   return ( 
     <>
-      <Header />
+    
+  <Header />
       <main>
         <Hero />
         <About />
@@ -22,5 +23,8 @@ export default function App(){
       </main>
       <Footer />    
     </>
+
+    
+    
   )
 }

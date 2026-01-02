@@ -25,26 +25,6 @@
 
 }
 
-.hero::before {
-    content: "";
-    position: absolute;
-    inset: -50%;
-
-    background:
-        linear-gradient(#567ebb33 1px, transparent 1px),
-        linear-gradient(90deg, #567ebb33 1px, transparent 1px);
-
-    background-size: 40px 40px;
-    transform-origin: center;
-
-    z-index: 0;
-
-    transition: transform 0.2s ease-out;
-
-    transform:
-        translateY(var(--bg-offset, 0px)) var(--grid-transform, rotateX(0deg) rotateY(0deg));
-
-    animation: gridMove 20s linear infinite, fadeIn 2s ease-out;
 
 
 
@@ -52,57 +32,9 @@
 
 
 
-}
-
-@keyframes gridMove {
-    from {
-        background-position: 0 0;
-    }
-
-    to {
-        background-position: 400px 400px;
-    }
-}
 
 
 
-
-
-.hero::after {
-    content: "";
-    position: absolute;
-    inset: -50%;
-    background:
-        linear-gradient(#567ebb22 1px, transparent 1px),
-        linear-gradient(90deg, #567ebb22 1px, transparent 1px);
-    background-size: 80px 80px;
-
-    transform-origin: center;
-
-    z-index: 0;
-
-    transform:
-        translateZ(-120px) var(--grid-transform, rotateX(0deg) rotateY(0deg));
-
-    animation: gridMoveReverse 20s linear infinite, fadeIn 2s ease-out;
-
-
-
-
-
-}
-
-
-
-@keyframes gridMoveReverse {
-    from {
-        background-position: 400px 400px;
-    }
-
-    to {
-        background-position: 0 0;
-    }
-}
 
 .glow {
 
@@ -122,7 +54,6 @@
 
     animation: pulse 4s ease-in-out infinite;
 
-
 }
 
 @keyframes pulse {
@@ -136,6 +67,7 @@
         opacity: 0.4;
     }
 }
+
 
 .reveal {
     opacity: 0;

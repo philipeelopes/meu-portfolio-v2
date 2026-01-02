@@ -7,6 +7,8 @@ import "swiper/css/navigation";
 import styles from "./ProjectCard.module.css";
 import { FaEye, FaCode } from "react-icons/fa"; // Ícones para links
 import { SiReact, SiJavascript, SiTypescript } from "react-icons/si"; // Exemplos de ícones para techs
+import StarBackground from "./StarBackground";
+
 
 type ProjectCardProps = {
    title: string;
@@ -68,6 +70,15 @@ export default function ProjectCard({
                   </li>
                ))}
             </ul>
+            <StarBackground
+                  count={100}
+                  maxDistance={100}
+                  mouseDistance={100}
+                  starColor="255,255,255"
+                  lineColor="100,150,255"
+                  background="#000000ff"
+                  speed={1}
+                />
 
             <div className={styles.links}>
                <a href={demo} target="_blank" className={styles.link}>
