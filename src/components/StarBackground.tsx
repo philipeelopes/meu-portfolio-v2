@@ -23,6 +23,9 @@ export default function StarCanvas({
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
+
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
     const canvas = canvasRef.current;
     if (!canvas) return;
 
@@ -65,8 +68,11 @@ export default function StarCanvas({
       mouse.y = null;
     };
 
-    canvasEl.addEventListener("mousemove", onMouseMove);
-    canvasEl.addEventListener("mouseleave", onMouseLeave);
+    if (!isMobile) {
+      canvasEl.addEventListener("mousemove", onMouseMove);
+      canvasEl.addEventListener("mouseleave", onMouseLeave);
+    }
+
 
     // -----------------------------
     // Star class
@@ -82,8 +88,8 @@ export default function StarCanvas({
       currentBrightness: number;
 
       constructor() {
-        this.x = Math.random() * window.innerWidth;
-        this.y = Math.random() * window.innerHeight;
+        this.x = Math.random() * canvasEl.width;
+        this.y = Math.random() * canvasEl.height;
         this.vx = (Math.random() - 0.5) * 0.6 * speed;
         this.vy = (Math.random() - 0.5) * 0.3 * speed;
         this.size = Math.random() * 3 + 1;
@@ -96,8 +102,8 @@ export default function StarCanvas({
         this.x += this.vx;
         this.y += this.vy;
 
-        if (this.x < 0 || this.x > window.innerWidth) this.vx *= -1;
-        if (this.y < 0 || this.y > window.innerHeight) this.vy *= -1;
+        if (this.x < 0 || this.x > canvasEl.width) this.vx *= -1;
+        if (this.y < 0 || this.y > canvasEl.height) this.vy *= -1;
 
         this.pulse += 0.05;
         this.currentBrightness =
@@ -119,10 +125,12 @@ export default function StarCanvas({
     // Create stars
     // -----------------------------
     const stars: Star[] = [];
-    for (let i = 0; i < count; i++) {
+
+    const starCount = isMobile ? Math.floor(count * 3) : count;
+
+    for (let i = 0; i < starCount; i++) {
       stars.push(new Star());
     }
-
     // -----------------------------
     // Animation loop
     // -----------------------------
@@ -147,10 +155,9 @@ export default function StarCanvas({
             context.beginPath();
             context.moveTo(s1.x, s1.y);
             context.lineTo(s2.x, s2.y);
-            context.strokeStyle = `rgba(${lineColor},${
-              (1 - dist / maxDistance) * s1.currentBrightness
-            })`;
-            context.lineWidth = 1;
+            context.strokeStyle = `rgba(${lineColor},${(1 - dist / maxDistance) * s1.currentBrightness
+              })`;
+            context.lineWidth = isMobile ? 0.5 : 1;
             context.stroke();
           }
         }
@@ -172,8 +179,11 @@ export default function StarCanvas({
     return () => {
       cancelAnimationFrame(animationId);
       window.removeEventListener("resize", resize);
-      canvasEl.removeEventListener("mousemove", onMouseMove);
-      canvasEl.removeEventListener("mouseleave", onMouseLeave);
+      if (!isMobile) {
+        canvasEl.addEventListener("mousemove", onMouseMove);
+        canvasEl.addEventListener("mouseleave", onMouseLeave);
+      }
+
     };
   }, [
     count,
