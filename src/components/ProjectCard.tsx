@@ -121,7 +121,7 @@ export default function ProjectCard({
                ))}
             </ul>
             <StarBackground
-               count={100}
+               count={60}
                maxDistance={100}
                mouseDistance={100}
                starColor="255,255,255"

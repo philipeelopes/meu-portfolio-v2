@@ -44,7 +44,7 @@ export default function Hero() {
 
 
   return (
-    <section ref={heroRef} className={styles.hero}>
+    <section ref={heroRef} className={styles.hero} id="hero">
      
        <StarBackground
       count={200}

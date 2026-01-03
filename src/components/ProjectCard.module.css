@@ -248,7 +248,7 @@
     }
 
     .card:hover {
-        transform: none; /* Remove tilt no mobile para evitar bugs */
+        transform: none; 
     }
 
     .techItem, .link {

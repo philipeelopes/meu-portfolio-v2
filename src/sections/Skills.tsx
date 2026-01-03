@@ -49,18 +49,24 @@ const skills = [
 
         <section ref={sectionRef} className={styles.skills} id="skills">
             <h2>Skills</h2>
+              
 
 
             <div className={styles.grid}>
+
+                
                 {skills.map((skill, index) =>(
                     <div 
+                      
                     key={skill.name}
+                     
                     className={`${styles.card} ${
                         visible ? styles.visible : ""
-                    }`}
+                    }`}     
                         style={{ transitionDelay: `${index * 120}ms`}}
                     >
-                        <span className={styles.icon}>{skill.icon}</span>
+                        <span className={styles.icon}>{skill.icon}
+                        </span>
                         <p>{skill.name}</p>
                     </div>
                 ))}

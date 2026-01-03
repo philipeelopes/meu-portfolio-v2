@@ -20,8 +20,9 @@ export default function App(){
         <Projects />
         <Skills />
         <Contact />
+        <Footer />   
       </main>
-      <Footer />    
+       
     </>
 
     

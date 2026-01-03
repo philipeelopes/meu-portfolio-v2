@@ -30,6 +30,7 @@ export default function About() {
 
         <section
             ref={aboutRef}
+            id="about"
             className={`${styles.about} ${visible ? styles.aboutVisible : ""}`}
 
         >

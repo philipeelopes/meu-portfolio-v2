@@ -26,16 +26,6 @@
 }
 
 
-
-
-
-
-
-
-
-
-
-
 .glow {
 
     inset: 0;
@@ -95,11 +85,6 @@
 .delay4 {
     transition-delay: 0.7s;
 }
-
-
-
-
-
 
 
 .content {
@@ -168,6 +153,9 @@
     transform: scale(1.1);
     transition: all 0.5s ease;
 }
+
+
+
 
 .socials {
     display: flex;
