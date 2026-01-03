@@ -12,8 +12,8 @@ import {
 
 
 const skills = [
-    {name: "React", icon: <SiReact/>},
-      { name: "TypeScript", icon: <SiTypescript /> },
+  {name: "React", icon: <SiReact/>},
+  { name: "TypeScript", icon: <SiTypescript /> },
   { name: "JavaScript", icon: <SiJavascript /> },
   { name: "HTML", icon: <SiHtml5 /> },
   { name: "CSS", icon: <SiCss3 /> },
