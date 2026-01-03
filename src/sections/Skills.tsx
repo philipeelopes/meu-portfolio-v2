@@ -1,4 +1,4 @@
-import { div, section } from "framer-motion/client";
+
 import styles from "./Skills.module.css"
 import { useEffect, useRef, useState } from "react"
 import {
