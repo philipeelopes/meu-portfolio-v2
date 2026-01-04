@@ -98,7 +98,7 @@
 
 .swiperProjects img:hover {
     transform: scale(1.05);
-    /* Zoom sutil na imagem */
+   
 
 }
 
@@ -177,7 +177,7 @@
 .links {
     display: flex;
     gap: 1rem;
-    padding: 1rem 0;
+    padding: 0;
 }
 
 .link {
@@ -253,8 +253,13 @@
     }
 
     .swiperProjects {
-        height: 320px;
+        height: 200px;
     }
+    
+    .card h3{
+        font-size: 1.5rem;
+    }
+
 
     .card:hover {
         transform: none;
