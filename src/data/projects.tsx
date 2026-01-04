@@ -22,34 +22,81 @@ export const projects = [
   },
   {  
     id: 2,
-    title: "Portfólio Pessoal",
+    title: "Site fictional de agência",
     description:
-      "Site pessoal desenvolvido em React com vídeo de fundo e layout moderno.",
-    techs: ["React", "Vite", "TypeScript"],
-    repo: "https://github.com/philipeelopes/meu-portfolio",
-    demo: "https://philipeelopes.github.io/meu-portfolio",
+      "Site institucional para uma empresa fictícia dedicada à preservação  e proteção da vida marinha",
+    techs: ["Html", "CSS", "JavaScript"],
+    repo: "https://github.com/philipeelopes/waves.CORPp",
+    demo: "https://philipeelopes.github.io/waves.CORPp/",
         images: [
-      "imagens/projects/todo-list/home.png",
-      "imagens/projects/todo-list/tarefas.png",
-      "imagens/projects/todo-list/listadetarefas.png",
-      "imagens/projects/todo-list/darkmode.png",
+      "imagens/projects/wavez/wavez1.png",
+      "imagens/projects/wavez/wavez2.png",
+      "imagens/projects/wavez/wavez3.png",
+      "imagens/projects/wavez/wavez4.png",
+      "imagens/projects/wavez/wavez5.png",
+      "imagens/projects/wavez/wavez6.png",
     ],
 
   },
 
    {
     id: 3,
-    title: "Wavez corp",
+    title: "em breve",
     description:
-      "Site pessoal desenvolvido em React com vídeo de fundo e layout moderno.",
+      "em breve descrição do projeto",
     techs: ["React", "Vite", "TypeScript"],
     repo: "https://github.com/philipeelopes/meu-portfolio",
     demo: "https://philipeelopes.github.io/meu-portfolio",
         images: [
-      "imagens/projects/todo-list/home.png",
-      "imagens/projects/todo-list/tarefas.png",
-      "imagens/projects/todo-list/listadetarefas.png",
-      "imagens/projects/todo-list/darkmode.png",
+      "imagens/projects/embreve.jpg",
+      "imagens/projects/embreve.jpg",
+      "imagens/projects/embreve.jpg",
+      
+    ],
+
+  },
+  {
+    id: 3,
+    title: "em breve",
+    description:
+      "em breve descrição do projeto",
+    techs: ["React", "Vite", "TypeScript"],
+    repo: "https://github.com/philipeelopes/meu-portfolio",
+    demo: "https://philipeelopes.github.io/meu-portfolio",
+        images: [
+      "imagens/projects/embreve.jpg",
+      "imagens/projects/embreve.jpg",
+      "imagens/projects/embreve.jpg",
+    ],
+
+  },
+  {
+    id: 3,
+    title: "em breve",
+    description:
+      "em breve descrição do projeto",
+    techs: ["React", "Vite", "TypeScript"],
+    repo: "https://github.com/philipeelopes/meu-portfolio",
+    demo: "https://philipeelopes.github.io/meu-portfolio",
+        images: [
+      "imagens/projects/embreve.jpg",
+      "imagens/projects/embreve.jpg",
+      "imagens/projects/embreve.jpg",
+    ],
+
+  },
+  {
+    id: 3,
+    title: "em breve",
+    description:
+      "em breve descrição do projeto",
+    techs: ["React", "Vite", "TypeScript"],
+    repo: "https://github.com/philipeelopes/meu-portfolio",
+    demo: "https://philipeelopes.github.io/meu-portfolio",
+        images: [
+      "imagens/projects/embreve.jpg",
+      "imagens/projects/embreve.jpg",
+      "imagens/projects/embreve.jpg",
     ],
 
   },

@@ -148,6 +148,49 @@
 
 
 
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .about {
+    max-width: 95%; 
+    padding-left: 2rem; 
+    min-height: 100vh; 
+  }
+
+  .about h2 {
+    font-size: 4rem; 
+    margin-bottom: 6rem; 
+  }
+
+  .about p {
+    font-size: 1.3rem; 
+    line-height: 1.5; 
+  }
+
+  .cornerImage {
+    width: 25vw; 
+    height: 60vh; 
+    padding-right: 2rem; 
+    opacity: 0.7; 
+  }
+
+  .info {
+    width: 450px; 
+    min-height: calc(100vh - 10rem); 
+  }
+
+  .about .city {
+    font-size: 1.1rem; 
+    gap: 10px; 
+  }
+
+  .about .city::before,
+  .about .city::after {
+    width: 25px; 
+  }
+}
+
+
+
 @media (max-width: 768px) {
 
 

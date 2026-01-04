@@ -85,7 +85,7 @@
 
 .swiperProjects {
     width: 100%;
-    height: 440px;
+    height: 340px;
     border-radius: 12px;
 }
 
@@ -240,7 +240,40 @@
 
 
 
+@media (min-width: 768px) and (max-width: 1024px) {
+    .card {
+        width: 95%; 
+        height: 70vh; 
+        padding: 1.5rem; 
+        gap: 0.8rem; 
+    }
 
+    .swiperProjects {
+        height: 350px; 
+    }
+
+    .card h3 {
+        font-size: 1.8rem; 
+    }
+
+    .card p {
+        font-size: 1.1rem; 
+    }
+
+    .techItem {
+        font-size: 0.85rem; 
+        padding: 0.35rem 0.7rem; 
+    }
+
+    .link {
+        padding: 0.6rem 1.2rem; 
+        font-size: 0.9rem; 
+    }
+
+    .card:hover {
+        transform: translateY(-5px) rotateX(3deg); 
+    }
+}
 
 
 

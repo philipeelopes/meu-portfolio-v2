@@ -14,7 +14,7 @@ export default function App(){
     <>
     
   <Header />
-      <main>
+      <main className="main-fade-in">  
         <Hero />
         <About />
         <Projects />
