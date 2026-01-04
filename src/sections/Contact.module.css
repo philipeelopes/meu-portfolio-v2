@@ -41,8 +41,13 @@
 }
 
 @keyframes float {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-100px); }
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-100px);
+    }
 }
 
 .content {
@@ -58,7 +63,9 @@
     font-size: 4rem;
     font-weight: 300;
     margin-bottom: 2rem;
-    background: linear-gradient(45deg, #567ebb, #a8d0e6);
+    background: linear-gradient(45deg,
+            #567ebb,
+            #c9a96a);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     border-bottom: none;
@@ -81,7 +88,8 @@
     margin-right: auto;
 }
 
-.input, .textarea {
+.input,
+.textarea {
     padding: 1rem;
     border: 1px solid rgba(86, 126, 187, 0.5);
     border-radius: 10px;
@@ -92,9 +100,10 @@
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.input:focus, .textarea:focus {
-    border-color: #567ebb;
-    box-shadow: 0 0 20px rgba(86, 126, 187, 0.5);
+.input:focus,
+.textarea:focus {
+    box-shadow: 0 0 18px rgba(201, 169, 106, 0.45);
+    border-color: #c9a96a;
     outline: none;
 }
 
@@ -107,7 +116,9 @@
     padding: 1rem 2rem;
     border: none;
     border-radius: 30px;
-    background: linear-gradient(45deg, #567ebb, #a8d0e6);
+    background: linear-gradient(45deg,
+            #c9a96a,
+            #E7CC7F);
     color: #fff;
     font-size: 1.1rem;
     font-weight: 500;
@@ -115,10 +126,10 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.submitButton:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-}
+
+
+
+
 
 .actions {
     display: flex;
@@ -133,7 +144,7 @@
     gap: 0.6rem;
     padding: 1rem 2rem;
     border-radius: 40px;
-    border: 1px solid rgba(86, 126, 187, 0.5);
+    border: 1px solid rgba(201, 169, 106, 0.45);
     text-decoration: none;
     color: #fff;
     font-size: 1.1rem;
@@ -151,7 +162,7 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(86, 126, 187, 0.4), transparent);
+    background: linear-gradient(90deg, transparent, rgba(201, 169, 106, 0.35), transparent);
     transition: left 0.5s ease;
 }
 
@@ -163,13 +174,16 @@
     .contact h2 {
         font-size: 3rem;
     }
+
     .text {
         font-size: 1.2rem;
     }
+
     .actions {
         flex-direction: column;
         align-items: center;
     }
+
     .form {
         max-width: 100%;
     }

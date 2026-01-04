@@ -52,12 +52,11 @@
   font-size: 5rem;
   font-weight: 300;
   margin-bottom: 10rem;
-  border-bottom: 1px solid #567ebb;
-
-
-
-
+  border-bottom: 1px solid transparent;
+  border-image: linear-gradient(to right, #d4af37, transparent) 1;
 }
+
+
 
 .about p {
   margin-bottom: 1rem;
@@ -65,8 +64,11 @@
   line-height: 1.6;
   color: #ffffff;
 
+}
 
-
+.gold {
+  color: #d4af37;
+  font-weight: 600;
 }
 
 .cornerImage {
@@ -79,12 +81,8 @@
     z-index: 1;   
     pointer-events: none; 
     padding-right: 3.5rem;
-
-    
-  
+    filter: sepia(20%) hue-rotate(10deg) brightness(1.05);
 }
-
-
 
 
 .info {
@@ -95,13 +93,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
- 
-  
 
- 
-
-
-}
+} 
 
 .about .city {
   display: flex;
@@ -124,7 +117,7 @@
   content: "";
   height: 3px;
   width: 30px; 
-  background-color: #567ebb;
+  background-color: #d4af37;
   
   animation: expandLine 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
   

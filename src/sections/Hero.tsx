@@ -52,12 +52,13 @@ export default function Hero() {
       mouseDistance={100}
       starColor="255,255,255"
       lineColor="100,150,255"
-      background="#000000ff"
+      background=""
       speed={1}
     />
 
 
       <div className={styles.bg} />
+      
       <div className={styles.glow} />
 
       <div className={styles.content}>

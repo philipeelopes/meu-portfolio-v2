@@ -16,7 +16,7 @@
     font-size: 4rem;
     font-weight: 300;
     margin-bottom: 4rem;
-    border-bottom: 1px solid #567ebb;
+    border-bottom: 1px solid rgba(201, 169, 106, 0.6);
 }
 
 .grid {
@@ -43,6 +43,7 @@
         transform 0.6s cubic-bezier(0.4, 0, 0.2, 1),
         box-shadow 0.4s ease;
 }
+
 .card::before {
   content: "";
   position: absolute;
@@ -51,7 +52,7 @@
   background: linear-gradient(
     120deg,
     transparent,
-    rgba(86, 126, 187, 0.25),
+    rgba(201, 169, 106, 0.25),
     transparent
   );
   opacity: 0;
@@ -86,12 +87,12 @@
 
 .card:hover {
   transform: translateY(-8px) scale(1.05);
-  box-shadow: 0 16px 32px rgba(86, 126, 187, 0.35);
+  box-shadow: 0 16px 32px rgba(201, 169, 106, 0.45);
 }
 
 .card:hover .icon {
   transform: scale(1.2) rotate(5deg);
-  color: #dce0e6;
+   color: #c9a96a
 }
 
 @media (max-width: 768px) {

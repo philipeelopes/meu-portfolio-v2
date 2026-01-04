@@ -47,7 +47,7 @@ export default function About() {
 
                 <p className={`${styles.textReveal} ${styles.delay1} ${visible ? styles.textVisible : ""
                     }`}>
-                    Sou desenvolvedor frontend focado em React e JavaScript, com interesse em
+                    Sou desenvolvedor frontend focado em <span className={styles.gold}>React</span> e <span className={styles.gold}>JavaScript</span>, com interesse em
                     criar interfaces modernas, responsivas e acessíveis.</p>
 
                 <p className={`${styles.textReveal} ${styles.delay2} ${visible ? styles.textVisible : ""

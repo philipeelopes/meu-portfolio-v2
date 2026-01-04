@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 
@@ -12,14 +16,16 @@ main {
   background:
     radial-gradient(
       800px circle at 50% 0%,
-      rgba(86, 126, 187, 0.08),
+      rgba(86, 126, 187, 0.06),
       transparent 60%
     ),
     linear-gradient(
       180deg,
-      #000000 0%,
-      #000000 40%,
+      #0b0f1a 0%,
+      #0b0f1a 40%,
       #03072c 100%
     );
   overflow: hidden;
+  
+  font-family: "Open Sans", sans-serif;
 }
