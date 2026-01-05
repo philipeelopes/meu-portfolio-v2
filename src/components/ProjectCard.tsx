@@ -105,11 +105,7 @@ export default function ProjectCard({
                grabCursor={true}
                watchSlidesProgress={true}
 
-               freeMode={{
-                  enabled: true,
-                  momentumBounce: false,
-                  momentumRatio: 0.8,
-               }}
+             
 
                className={styles.swiperProjects}
             >
