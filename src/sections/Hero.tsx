@@ -54,9 +54,9 @@ export default function Hero() {
       if (index1 < fullText1.length) {
         setDisplayText1(fullText1.slice(0, index1 + 1));
         index1++;
-        setTimeout(typeWriter1, 150);  // Velocidade por letra
+        setTimeout(typeWriter1, 250);  // Velocidade por letra
       } else {
-        // Após "PHILIPE" terminar, inicia "LOPES" com um pequeno delay
+     
         setTimeout(typeWriter2, 300);  // Delay de 0.3s entre as palavras
       }
     };
