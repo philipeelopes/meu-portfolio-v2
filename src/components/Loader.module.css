@@ -1,0 +1,49 @@
+.loader {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, #141828, #000);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* Anel principal */
+.ring {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid rgba(212, 175, 55, 0.35);
+  box-shadow:
+    0 0 20px rgba(212, 175, 55, 0.5),
+    inset 0 0 12px rgba(212, 175, 55, 0.4);
+
+  animation: rotateRing 2.5s linear infinite;
+}
+
+/* Feixe de luz */
+.beam {
+  position: absolute;
+  inset: -10px;
+  border-radius: 50%;
+
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    rgba(212, 175, 55, 0.9) 20deg,
+    transparent 60deg
+  );
+
+  filter: blur(6px);
+}
+
+/* Rotação contínua */
+@keyframes rotateRing {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

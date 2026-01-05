@@ -9,7 +9,6 @@
     justify-content: center;
     align-items: center;
     color: #fff;
-    font-family: 'Arial', sans-serif;
     overflow: hidden;
     opacity: 0;
     transition: opacity 1s ease;
@@ -61,13 +60,9 @@
 
 .contact h2 {
     font-size: 4rem;
-    font-weight: 300;
+    font-weight: 500;
     margin-bottom: 2rem;
-    background: linear-gradient(45deg,
-            #567ebb,
-            #c9a96a);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #e3e6eb; ;
     border-bottom: none;
 }
 

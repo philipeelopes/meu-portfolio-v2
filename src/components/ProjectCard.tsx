@@ -38,32 +38,32 @@ export default function ProjectCard({
 }: ProjectCardProps) {
 
 
-/* ===============================
-     REVEAL ON SCROLL
-  =============================== */
-  const cardRef = useRef<HTMLDivElement | null>(null);
-  const [visible, setVisible] = useState(false);
+   /* ===============================
+        REVEAL ON SCROLL
+     =============================== */
+   const cardRef = useRef<HTMLDivElement | null>(null);
+   const [visible, setVisible] = useState(false);
 
-  useEffect(() => {
-    const el = cardRef.current;
-    if (!el) return;
+   useEffect(() => {
+      const el = cardRef.current;
+      if (!el) return;
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          observer.unobserve(el); // anima só uma vez
-        }
-      },
-      {
-        threshold: 0.2,
-      }
-    );
+      const observer = new IntersectionObserver(
+         ([entry]) => {
+            if (entry.isIntersecting) {
+               setVisible(true);
+               observer.unobserve(el); // anima só uma vez
+            }
+         },
+         {
+            threshold: 0.2,
+         }
+      );
 
-    observer.observe(el);
+      observer.observe(el);
 
-    return () => observer.disconnect();
-  }, []);
+      return () => observer.disconnect();
+   }, []);
 
 
 
@@ -74,20 +74,21 @@ export default function ProjectCard({
          JavaScript: <SiJavascript />,
          TypeScript: <SiTypescript />,
          // mais: ex. "CSS": <SiCss3 />, etc.
-      }; 
+      };
       return iconMap[tech] || null;
    };
 
    return (
       <div
-      ref={cardRef}
-      className={`
+
+         ref={cardRef}
+         className={`
         ${styles.card}
         ${styles.reveal}
         ${index % 2 === 0 ? styles.fromLeft : styles.fromRight}
         ${visible ? styles.revealVisible : ""}
       `}
-    >
+      >
 
 
          {/* Carrossel com overlay sutil */}
@@ -96,12 +97,28 @@ export default function ProjectCard({
                modules={[Pagination, Navigation]}
                pagination={{ clickable: true }}
                navigation
+
                spaceBetween={10}
+               speed={700}
+               resistanceRatio={0.6}
+               touchRatio={1.2}
+               grabCursor={true}
+               watchSlidesProgress={true}
+
+               freeMode={{
+                  enabled: true,
+                  momentumBounce: false,
+                  momentumRatio: 0.8,
+               }}
+
                className={styles.swiperProjects}
             >
                {images?.map((img, index) => (
                   <SwiperSlide key={index}>
-                     <img src={img} alt={title} />
+                     <img src={img}
+                        loading="lazy"
+                        decoding="async"
+                        alt={title} />
                      <div className={styles.overlay}></div>
                   </SwiperSlide>
                ))}
@@ -120,8 +137,8 @@ export default function ProjectCard({
                   </li>
                ))}
             </ul>
-            
-            
+
+
 
             <div className={styles.links}>
                <a href={demo} target="_blank" className={styles.link}>
@@ -132,6 +149,7 @@ export default function ProjectCard({
                </a>
             </div>
          </div>
+
       </div>
    );
 }

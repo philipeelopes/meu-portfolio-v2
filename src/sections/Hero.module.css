@@ -86,6 +86,13 @@
     transition-delay: 0.7s;
 }
 
+.delay5 {
+    transition-delay: 0.9s;
+}
+
+.delay6 {
+    transition-delay: 1.2s;
+}
 
 .content {
     position: relative;

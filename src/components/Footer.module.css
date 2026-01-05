@@ -4,7 +4,6 @@
     background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
     border-top: 1px solid rgba(201, 169, 106, 0.25);
     color: #cfd6e0;
-    font-family: 'Arial', sans-serif;
     position: relative;
     overflow: hidden;
 }

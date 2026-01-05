@@ -36,7 +36,7 @@ export default function About() {
         >
 
 
-            <img src="imagens/fundo5.png" alt="foto decorativa" className={styles.cornerImage} />
+            <img src="imagens/fundo5.png" alt="foto decorativa" className={`${styles.cornerImage} ${visible ? styles.cornerImageVisible : ""}`} />
 
 
 

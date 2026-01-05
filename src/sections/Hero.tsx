@@ -106,11 +106,11 @@ export default function Hero() {
           Crio interfaces modernas e responsivas com React, JavaScript e TypeScript.
         </p>
 
-        <div className={styles.actions}>
+        <div className={`${styles.actions}  ${styles.reveal}  ${styles.delay5}`}>
           <a href="#projects">Ver projetos</a>
           <a href="#contact">Contato</a>
         </div>
-        <div className={styles.socials}>
+        <div className={`${styles.socials}  ${styles.reveal}  ${styles.delay6}`}>
           <a href="https://www.linkedin.com/in/philipe-lopes-9abba5320/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
             <FaLinkedin />
           </a>

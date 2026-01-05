@@ -4,28 +4,30 @@
   height: auto;
   max-width: 90%;
   margin: 0 auto;
-  font-family: Arial, Helvetica, sans-serif;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding-left: 3rem;
 
+  font-weight: 400;
+
   opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.9s ease, transform 0.9s ease;
+  transition:
+    opacity 0.9s ease-out,
+    transform 1s cubic-bezier(0.22, 1, 0.36, 1);
 
 }
 
 .aboutVisible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
 }
 
 .textReveal {
   opacity: 0;
   transform: translateY(25px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition: opacity 0.6s ease,
+    transform 0.8s cubic-bezier(0.22, 3, 0.36, 1);
 }
 
 .textVisible {
@@ -37,12 +39,15 @@
 .delay1 {
   transition-delay: 0.2s;
 }
+
 .delay2 {
   transition-delay: 0.6s;
 }
+
 .delay3 {
   transition-delay: 1s;
 }
+
 .delay4 {
   transition-delay: 1.4s;
 }
@@ -50,7 +55,7 @@
 .about h2 {
   color: #ffffff;
   font-size: 5rem;
-  font-weight: 300;
+  font-weight: bolder;
   margin-bottom: 10rem;
   border-bottom: 1px solid transparent;
   border-image: linear-gradient(to right, #d4af37, transparent) 1;
@@ -72,17 +77,36 @@
 }
 
 .cornerImage {
-    position: absolute;
-    bottom: 1;   
-    right: 0;    
-    width: 35vw; 
-    height: 80vh;
-    opacity: .8; 
-    z-index: 1;   
-    pointer-events: none; 
-    padding-right: 3.5rem;
-    filter: sepia(20%) hue-rotate(10deg) brightness(1.05);
+  position: absolute;
+  bottom: 1;
+  right: 0;
+  width: 35vw;
+  height: 80vh;
+  z-index: 1;
+  padding-right: 3.5rem;
+
+  opacity: 0;
+  transform: translateX(40px) scale(0.95);
+  transition:
+    opacity 1s ease-out,
+    transform 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 1.2s ease;
+    
+  filter: sepia(20%) hue-rotate(10deg) brightness(1.05);
+
+  transition-delay: 1.6s;
+  z-index: 1;
+  pointer-events: none;
+
 }
+
+.cornerImageVisible {
+  opacity: 0.85;
+  transform: translateX(0) scale(1);
+  filter: blur(0) sepia(20%) hue-rotate(10deg) brightness(1.05);
+}
+
+
 
 
 .info {
@@ -94,19 +118,19 @@
   flex-direction: column;
   align-items: center;
 
-} 
+}
 
 .about .city {
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
-  gap: 12px; 
-  
+  gap: 12px;
 
 
-  margin-top: auto; 
+
+  margin-top: auto;
   margin-bottom: 0;
-  
+
   font-size: 1.2rem;
   opacity: 0.8;
 }
@@ -116,13 +140,13 @@
 .about .city::after {
   content: "";
   height: 3px;
-  width: 30px; 
+  width: 30px;
   background-color: #d4af37;
-  
+
   animation: expandLine 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
-  
- 
-  
+
+
+
 }
 
 
@@ -140,6 +164,7 @@
     transform: scaleX(0);
     opacity: 0.3;
   }
+
   100% {
     transform: scaleX(1);
     opacity: 1;
@@ -151,41 +176,41 @@
 
 @media (min-width: 768px) and (max-width: 1024px) {
   .about {
-    max-width: 95%; 
-    padding-left: 2rem; 
-    min-height: 100vh; 
+    max-width: 95%;
+    padding-left: 2rem;
+    min-height: 100vh;
   }
 
   .about h2 {
-    font-size: 4rem; 
-    margin-bottom: 6rem; 
+    font-size: 4rem;
+    margin-bottom: 6rem;
   }
 
   .about p {
-    font-size: 1.3rem; 
-    line-height: 1.5; 
+    font-size: 1.3rem;
+    line-height: 1.5;
   }
 
   .cornerImage {
-    width: 25vw; 
-    height: 60vh; 
-    padding-right: 2rem; 
-    opacity: 0.7; 
+    width: 25vw;
+    height: 60vh;
+    padding-right: 2rem;
+    opacity: 0.7;
   }
 
   .info {
-    width: 450px; 
-    min-height: calc(100vh - 10rem); 
+    width: 450px;
+    min-height: calc(100vh - 10rem);
   }
 
   .about .city {
-    font-size: 1.1rem; 
-    gap: 10px; 
+    font-size: 1.1rem;
+    gap: 10px;
   }
 
   .about .city::before,
   .about .city::after {
-    width: 25px; 
+    width: 25px;
   }
 }
 
@@ -195,16 +220,16 @@
 
 
   .about {
-  position: relative;
-  min-height: 94vh;
-  padding: 1.5rem;
-  
-}
+    position: relative;
+    min-height: 94vh;
+    padding: 1.5rem;
+
+  }
 
 
-  .about h2{
+  .about h2 {
     font-size: 3rem;
-     margin-bottom: 2rem;
+    margin-bottom: 2rem;
   }
 
   .about p {
@@ -213,23 +238,23 @@
 
   .info {
 
-  width: 100%;
-  
+    width: 100%;
 
-  display: flex;
-  align-items: start;
-  justify-content: center;
-}
 
-.about .city{
-  
-  
-  font-size: 0.9rem;
-}
+    display: flex;
+    align-items: start;
+    justify-content: center;
+  }
 
-   .cornerImage {
-        display: none;
-    }
+  .about .city {
+
+
+    font-size: 0.9rem;
+  }
+
+  .cornerImage {
+    display: none;
+  }
 
 
 

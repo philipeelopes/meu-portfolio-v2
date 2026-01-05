@@ -21,10 +21,6 @@
     will-change: transform;
 
     border: 1px solid rgba(212, 175, 55, 0.15);
-
-
-
-
 }
 
 :global(.swiper-slide-active) .card {
@@ -98,7 +94,7 @@
 
 .swiperProjects img:hover {
     transform: scale(1.05);
-   
+
 
 }
 
@@ -217,7 +213,7 @@
 }
 
 
-/* estado inicial */
+
 .reveal {
     opacity: 0;
     transition:
@@ -242,36 +238,36 @@
 
 @media (min-width: 768px) and (max-width: 1024px) {
     .card {
-        width: 95%; 
-        height: 70vh; 
-        padding: 1.5rem; 
-        gap: 0.8rem; 
+        width: 95%;
+        height: 70vh;
+        padding: 1.5rem;
+        gap: 0.8rem;
     }
 
     .swiperProjects {
-        height: 350px; 
+        height: 350px;
     }
 
     .card h3 {
-        font-size: 1.8rem; 
+        font-size: 1.8rem;
     }
 
     .card p {
-        font-size: 1.1rem; 
+        font-size: 1.1rem;
     }
 
     .techItem {
-        font-size: 0.85rem; 
-        padding: 0.35rem 0.7rem; 
+        font-size: 0.85rem;
+        padding: 0.35rem 0.7rem;
     }
 
     .link {
-        padding: 0.6rem 1.2rem; 
-        font-size: 0.9rem; 
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
     }
 
     .card:hover {
-        transform: translateY(-5px) rotateX(3deg); 
+        transform: translateY(-5px) rotateX(3deg);
     }
 }
 
@@ -283,13 +279,22 @@
     .card {
         width: 100%;
         padding: 1.5rem;
+        background-color: #338df3;
+
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        transform-style: flat;
+        will-change: auto;
     }
 
     .swiperProjects {
         height: 200px;
+        will-change: transform;
     }
-    
-    .card h3{
+
+    .card h3 {
         font-size: 1.5rem;
     }
 
