@@ -126,7 +126,7 @@ export default function StarCanvas({
     // -----------------------------
     const stars: Star[] = [];
 
-    const starCount = isMobile ? Math.floor(count * 3) : count;
+    const starCount = isMobile ? Math.floor(count * 1.5) : count;
 
     for (let i = 0; i < starCount; i++) {
       stars.push(new Star());
