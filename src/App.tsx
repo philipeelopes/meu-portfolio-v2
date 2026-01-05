@@ -17,7 +17,7 @@ export default function App(){
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 1500); // Duração do loader em milissegundos
+    }, 1000); // Duração do loader em milissegundos
 
     return () => clearTimeout(timer);
   }, []);
