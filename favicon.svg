@@ -1,0 +1,34 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 100 100"
+>
+  <!-- Anel dourado -->
+  <circle
+    cx="50"
+    cy="50"
+    r="34"
+    fill="none"
+    stroke="rgba(212, 175, 55, 0.85)"
+    stroke-width="4"
+  />
+
+  <!-- Feixe de luz -->
+  <path
+    d="M50 6
+       A44 44 0 0 1 94 50
+       L84 50
+       A34 34 0 0 0 50 16 Z"
+    fill="rgba(212, 175, 55, 0.95)"
+    opacity="0.9"
+  />
+
+  <!-- Glow sutil -->
+  <circle
+    cx="50"
+    cy="50"
+    r="30"
+    fill="none"
+    stroke="rgba(212, 175, 55, 0.35)"
+    stroke-width="1.5"
+  />
+</svg>
