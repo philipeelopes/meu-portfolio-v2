@@ -53,6 +53,8 @@ export const projects = [
       "imagens/projects/gerenciador/gerenciador3.png",
       "imagens/projects/gerenciador/gerenciador4.png",
       "imagens/projects/gerenciador/gerenciador5.png",
+      "imagens/projects/gerenciador/gerenciador6.png",
+      "imagens/projects/gerenciador/gerenciador7.png",
       
       
     ],
