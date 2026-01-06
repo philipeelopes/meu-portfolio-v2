@@ -56,7 +56,7 @@ export const projects = [
 
   },
   {
-    id: 3,
+    id: 4,
     title: "em breve",
     description:
       "em breve descrição do projeto",
@@ -71,7 +71,7 @@ export const projects = [
 
   },
   {
-    id: 3,
+    id: 5,
     title: "em breve",
     description:
       "em breve descrição do projeto",
@@ -86,7 +86,7 @@ export const projects = [
 
   },
   {
-    id: 3,
+    id: 6,
     title: "em breve",
     description:
       "em breve descrição do projeto",
