@@ -41,12 +41,12 @@ export const projects = [
 
    {
     id: 3,
-    title: "em breve",
+    title: "Gerenciador de Finanças Pessoais",
     description:
       "em breve descrição do projeto",
-    techs: ["React", "Vite", "TypeScript"],
-    repo: "https://github.com/philipeelopes/meu-portfolio",
-    demo: "https://philipeelopes.github.io/meu-portfolio",
+    techs: ["React", "Vite", "JavaScript"],
+    repo: "https://github.com/philipeelopes/gerenciador-de-projetos1",
+    demo: "https://philipeelopes.github.io/gerenciador-de-projetos1/",
         images: [
       "imagens/projects/embreve.jpg",
       "imagens/projects/embreve.jpg",
