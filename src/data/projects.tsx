@@ -43,7 +43,7 @@ export const projects = [
     id: 3,
     title: "Gerenciador de Projetos Pessoais",
     description:
-      "Sistema completo de gerenciamento de projetos com frontend em React e backend ativo, focado em organização, controle financeiro e boas práticas de desenvolvimento.",
+      "Sistema completo de gerenciamento de projetos com frontend em React e backend ativo.",
     techs: ["React", "Vite", "JavaScript"],
     repo: "https://github.com/philipeelopes/gerenciador-de-projetos1",
     demo: "https://philipeelopes.github.io/gerenciador-de-projetos1/",
@@ -62,16 +62,16 @@ export const projects = [
   },
   {
     id: 4,
-      title: "Gerenciador de Finanças Pessoais",
+      title: "User Registration simples",
     description:
-      "em breve descrição do projeto",
+      "Sistema de cadastro de usuários full stack, com frontend em React e backend em Node.js.",
     techs: ["React", "Vite", "JavaScript"],
     repo: "https://github.com/philipeelopes/gerenciador-de-projetos1",
-    demo: "https://philipeelopes.github.io/gerenciador-de-projetos1/",
+    demo: "https://philipeelopes.github.io/login",
         images: [
-      "imagens/projects/embreve.jpg",
-      "imagens/projects/embreve.jpg",
-      "imagens/projects/embreve.jpg",
+      "imagens/projects/registro/registro01.png",
+      "imagens/projects/registro/registro02.png",
+      
     ],
 
   },
