@@ -1,7 +1,4 @@
 
-
-
-
 export const projects = [
   {
     id: 1,
@@ -11,9 +8,6 @@ export const projects = [
     techs: ["React", "TypeScript", "CSS Modules"],
     images: [
       "imagens/projects/todo-list/home.png",
-      "imagens/projects/todo-list/tarefas.png",
-      "imagens/projects/todo-list/listadetarefas.png",
-      "imagens/projects/todo-list/darkmode.png",
     ],
 
 
@@ -30,11 +24,6 @@ export const projects = [
     demo: "https://philipeelopes.github.io/waves.CORPp/",
         images: [
       "imagens/projects/wavez/wavez1.png",
-      "imagens/projects/wavez/wavez2.png",
-      "imagens/projects/wavez/wavez3.png",
-      "imagens/projects/wavez/wavez4.png",
-      "imagens/projects/wavez/wavez5.png",
-      "imagens/projects/wavez/wavez6.png",
     ],
 
   },
@@ -48,15 +37,7 @@ export const projects = [
     repo: "https://github.com/philipeelopes/gerenciador-de-projetos1",
     demo: "https://philipeelopes.github.io/gerenciador-de-projetos1/",
         images: [
-      "imagens/projects/gerenciador/gerenciador1.png",
-      "imagens/projects/gerenciador/gerenciador2.png",
-      "imagens/projects/gerenciador/gerenciador3.png",
-      "imagens/projects/gerenciador/gerenciador4.png",
-      "imagens/projects/gerenciador/gerenciador5.png",
-      "imagens/projects/gerenciador/gerenciador6.png",
-      "imagens/projects/gerenciador/gerenciador7.png",
-      
-      
+      "imagens/projects/gerenciador/gerenciador1.png",   
     ],
 
   },
@@ -69,9 +50,7 @@ export const projects = [
     repo: "https://github.com/philipeelopes/gerenciador-de-projetos1",
     demo: "https://philipeelopes.github.io/login",
         images: [
-      "imagens/projects/registro/registro01.png",
-      "imagens/projects/registro/registro02.png",
-      
+      "imagens/projects/registro/registro01.png",  
     ],
 
   },

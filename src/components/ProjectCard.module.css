@@ -1,16 +1,12 @@
 .card {
     width: 90%;
-    height: 80vh;
+    min-height: 600px;
     position: relative;
     padding: 2rem;
     background: linear-gradient(180deg,
             rgba(20, 24, 40, 0.9),
             rgba(0, 0, 0, 0.95));
-
-
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    transform-style: preserve-3d;
+    transform-style: flat;
     border-radius: 16px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     display: flex;
@@ -111,6 +107,19 @@
 
 .imageContainer:hover .overlay {
     opacity: 1;
+}
+
+.projectImage {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.projectImage:hover {
+  transform: scale(1.03);
 }
 
 .content {

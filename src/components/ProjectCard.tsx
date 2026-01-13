@@ -1,151 +1,111 @@
-import React from 'react';
-import { useEffect, useRef, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+import { memo, useMemo, useState } from "react";
+import { useInView } from "react-intersection-observer";
+
 import styles from "./ProjectCard.module.css";
-import { FaEye, FaCode } from "react-icons/fa"; // Ícones para links
-import { SiReact, SiJavascript, SiTypescript } from "react-icons/si"; // Exemplos de ícones para techs
-
-
+import { FaEye, FaCode } from "react-icons/fa";
+import { SiReact, SiJavascript, SiTypescript } from "react-icons/si";
 
 type ProjectCardProps = {
-   index: number;
-   title: string;
-   description: string;
-   techs: string[];
-   images: string[];
-   repo: string;
-   demo: string;
+  index: number;
+  title: string;
+  description: string;
+  techs: string[];
+  images: string[];
+  repo: string;
+  demo: string;
+  isActive: boolean;
 };
 
+/* 🔒 Mapa de ícones fora do componente */
+const techIconMap: Record<string, React.ReactNode> = {
+  React: <SiReact />,
+  JavaScript: <SiJavascript />,
+  TypeScript: <SiTypescript />,
+};
 
-
-export default function ProjectCard({
-
-
-
-
-   index,
-   title,
-   description,
-   techs,
-   images,
-   repo,
-   demo,
+const ProjectCard = memo(function ProjectCard({
+  index,
+  title,
+  description,
+  techs,
+  images,
+  repo,
+  demo,
 }: ProjectCardProps) {
+  /* 👁️ Observer apenas para animação */
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
 
+  /* 🖼️ Controle da imagem (1 por vez) */
+  const [imgIndex, setImgIndex] = useState(0);
 
-   /* ===============================
-        REVEAL ON SCROLL
-     =============================== */
-   const cardRef = useRef<HTMLDivElement | null>(null);
-   const [visible, setVisible] = useState(false);
+  const techList = useMemo(
+    () =>
+      techs.map((tech) => (
+        <li key={tech} className={styles.techItem}>
+          {techIconMap[tech]} {tech}
+        </li>
+      )),
+    [techs]
+  );
 
-   useEffect(() => {
-      const el = cardRef.current;
-      if (!el) return;
-
-      const observer = new IntersectionObserver(
-         ([entry]) => {
-            if (entry.isIntersecting) {
-               setVisible(true);
-               observer.unobserve(el); // anima só uma vez
-            }
-         },
-         {
-            threshold: 0.2,
-         }
-      );
-
-      observer.observe(el);
-
-      return () => observer.disconnect();
-   }, []);
-
-
-
-   // Função para mapear techs a ícones
-   const getTechIcon = (tech: string): React.ReactElement | null => { // React.ReactElement para mais compatibilidade
-      const iconMap: { [key: string]: React.ReactElement } = {
-         React: <SiReact />,
-         JavaScript: <SiJavascript />,
-         TypeScript: <SiTypescript />,
-         // mais: ex. "CSS": <SiCss3 />, etc.
-      };
-      return iconMap[tech] || null;
-   };
-
-   return (
-      <div
-
-         ref={cardRef}
-         className={`
+  return (
+    <div
+      ref={ref}
+      className={`
         ${styles.card}
         ${styles.reveal}
         ${index % 2 === 0 ? styles.fromLeft : styles.fromRight}
-        ${visible ? styles.revealVisible : ""}
+        ${inView ? styles.revealVisible : ""}
       `}
-      >
-
-
-         {/* Carrossel com overlay sutil */}
-         <div className={styles.imageContainer}>
-            <Swiper
-               modules={[Pagination, Navigation]}
-               pagination={{ clickable: true }}
-               navigation
-
-               spaceBetween={10}
-               speed={700}
-               resistanceRatio={0.6}
-               touchRatio={1.2}
-               grabCursor={true}
-               watchSlidesProgress={true}
-
-             
-
-               className={styles.swiperProjects}
-            >
-               {images?.map((img, index) => (
-                  <SwiperSlide key={index}>
-                     <img src={img}
-                        loading="lazy"
-                        decoding="async"
-                        alt={title} />
-                     <div className={styles.overlay}></div>
-                  </SwiperSlide>
-               ))}
-            </Swiper>
-         </div>
-
-         {/* Conteúdo */}
-         <div className={styles.content}>
-            <h3>{title}</h3>
-            <p>{description}</p>
-
-            <ul className={styles.techs}>
-               {techs.map((tech) => (
-                  <li key={tech} className={styles.techItem}>
-                     {getTechIcon(tech)} {tech}
-                  </li>
-               ))}
-            </ul>
-
-
-
-            <div className={styles.links}>
-               <a href={demo} target="_blank" className={styles.link}>
-                  <FaEye /> Demo
-               </a>
-               <a href={repo} target="_blank" className={styles.link}>
-                  <FaCode /> Código
-               </a>
-            </div>
-         </div>
-
+    >
+      {/* 🖼️ IMAGEM SIMPLES (SEM SWIPER) */}
+      <div className={styles.imageContainer}>
+        {images.length > 0 && (
+          <img
+            src={images[imgIndex]}
+            alt={title}
+            loading="lazy"
+            width="600"
+            height="400"
+            className={styles.projectImage}
+            onClick={() =>
+              setImgIndex((prev) => (prev + 1) % images.length)
+            }
+          />
+        )}
       </div>
-   );
-}
+
+      <div className={styles.content}>
+        <h3>{title}</h3>
+        <p>{description}</p>
+
+        <ul className={styles.techs}>{techList}</ul>
+
+        <div className={styles.links}>
+          <a
+            href={demo}
+            target="_blank"
+            rel="noreferrer"
+            className={styles.link}
+          >
+            <FaEye /> Demo
+          </a>
+
+          <a
+            href={repo}
+            target="_blank"
+            rel="noreferrer"
+            className={styles.link}
+          >
+            <FaCode /> Código
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+});
+
+export default ProjectCard;
