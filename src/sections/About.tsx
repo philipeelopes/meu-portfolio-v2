@@ -35,8 +35,11 @@ export default function About() {
 
         >
 
-
-            <img src="imagens/fundo5.png" alt="foto decorativa" className={`${styles.cornerImage} ${visible ? styles.cornerImageVisible : ""}`} />
+            <div className={`${styles.auroraBoreal} ${visible ? styles.auroraVisible : ""}`}>
+                <div className={styles.auroraLayer1}></div>
+                <div className={styles.auroraLayer2}></div>
+                <div className={styles.auroraLayer3}></div>
+            </div>
 
 
 
