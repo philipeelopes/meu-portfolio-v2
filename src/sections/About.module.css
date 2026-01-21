@@ -157,7 +157,7 @@
     opacity: 0;
     transform: translateX(40px) scale(0.95);
     transition: opacity 1s ease-out, transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
-    transition-delay: 1.6s;
+    transition-delay: 1s;
     overflow: hidden;
     border-radius: 10px;
 }
