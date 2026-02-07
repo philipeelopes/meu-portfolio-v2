@@ -56,7 +56,7 @@ export default function Hero() {
         index1++;
         setTimeout(typeWriter1, 250);  // Velocidade por letra
       } else {
-     
+
         setTimeout(typeWriter2, 300);  // Delay de 0.3s entre as palavras
       }
     };
@@ -103,7 +103,7 @@ export default function Hero() {
           Desenvolvedor Frontend
         </h2>
         <p className={`${styles.reveal} ${styles.delay3}`}>
-          Crio interfaces modernas e responsivas com React, JavaScript e TypeScript.
+            Desenvolvo interfaces modernas, responsivas e performáticas para aplicações web.
         </p>
 
         <div className={`${styles.actions}  ${styles.reveal}  ${styles.delay5}`}>

@@ -48,23 +48,32 @@ export default function About() {
                 <h2>Sobre mim</h2>
 
 
-                <p className={`${styles.textReveal} ${styles.delay1} ${visible ? styles.textVisible : ""
-                    }`}>
-                    Sou desenvolvedor frontend focado em <span className={styles.gold}>React</span> e <span className={styles.gold}>JavaScript</span>, com interesse em
-                    criar interfaces modernas, responsivas e acessíveis.</p>
-
-                <p className={`${styles.textReveal} ${styles.delay2} ${visible ? styles.textVisible : ""
-                    }`}>
-                    Atualmente estudo TypeScript para escrever código mais seguro, organizado
-                    e fácil de manter, aplicando esses conceitos em projetos pessoais.</p>
-
-                <p className={`${styles.textReveal} ${styles.delay3} ${visible ? styles.textVisible : ""
-                    }`}>
-                    Gosto de aprender na prática, evoluindo constantemente e buscando boas
-                    práticas de desenvolvimento frontend.
-
+                <p
+                    className={`${styles.textReveal} ${styles.delay1} ${visible ? styles.textVisible : ""
+                        }`}
+                >
+                    Sou desenvolvedor frontend especializado em{" "}
+                    <span className={styles.gold}>React</span> e{" "}
+                    <span className={styles.gold}>JavaScript</span>, atuando no desenvolvimento de{" "}
+                    <strong>interfaces modernas, responsivas e focadas em experiência do usuário</strong>.
                 </p>
 
+                <p
+                    className={`${styles.textReveal} ${styles.delay2} ${visible ? styles.textVisible : ""
+                        }`}
+                >
+                    Trabalho com <strong>componentização, integração com APIs REST</strong> e{" "}
+                    <strong>Node.js</strong>, criando aplicações web organizadas, escaláveis e de
+                    fácil manutenção, com atenção à performance e boas práticas de desenvolvimento.
+                </p>
+
+                <p
+                    className={`${styles.textReveal} ${styles.delay3} ${visible ? styles.textVisible : ""
+                        }`}
+                >
+                    Busco entregar <strong>soluções eficientes e bem estruturadas</strong>,
+                    alinhando qualidade visual, usabilidade e código limpo em cada projeto.
+                </p>
 
 
                 <p className={`${styles.textReveal} ${styles.delay4} ${visible ? styles.textVisible : ""
