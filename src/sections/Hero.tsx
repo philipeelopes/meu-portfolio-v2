@@ -7,9 +7,9 @@ export default function Hero() {
   const heroRef = useRef<HTMLElement | null>(null);
   const [displayText1, setDisplayText1] = useState("");  // Para "PHILIPE"
   const [displayText2, setDisplayText2] = useState("");  // Para "LOPES"
-  const fullText1 = "PHILIPE";  // Texto para a primeira linha
-  const fullText2 = "LOPES";    // Texto para a segunda linha
-
+  const fullText1 = "PHILIPE";  // Texto  primeira linha
+  const fullText2 = "LOPES";    // Texto segunda linha
+  
   useEffect(() => {
     // Lógica existente para movimento do mouse
     const hero = heroRef.current;

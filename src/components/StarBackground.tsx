@@ -32,7 +32,7 @@ export default function StarCanvas({
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    // referências fixas (TypeScript safe) pq ele precisava
+    // referências fixas (TypeScript safe) 
     const canvasEl = canvas;
     const context = ctx;
 

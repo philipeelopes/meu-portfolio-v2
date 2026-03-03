@@ -56,16 +56,14 @@ export const projects = [
   },
   {
     id: 5,
-    title: "em breve",
+    title: "Emissor de Nota Fiscal ",
     description:
-      "em breve descrição do projeto",
+      "Sistema full stack de emissão de notas fiscais (NFS-e).",
     techs: ["React", "Vite", "TypeScript"],
-    repo: "https://github.com/philipeelopes/meu-portfolio",
-    demo: "https://philipeelopes.github.io/meu-portfolio",
+    repo: "https://github.com/philipeelopes/emissor-nota-fiscal",
+    demo: "https://emissor-nota-fiscal-kh8r.vercel.app/home",
         images: [
-      "imagens/projects/embreve.jpg",
-      "imagens/projects/embreve.jpg",
-      "imagens/projects/embreve.jpg",
+      "imagens/projects/emissor/emissor.png"
     ],
 
   },
