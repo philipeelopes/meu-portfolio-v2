@@ -69,16 +69,15 @@ export const projects = [
   },
   {
     id: 6,
-    title: "em breve",
+    title: "Emissor de Nota Fiscal - Landing Page",
     description:
-      "em breve descrição do projeto",
+      "Landing page desenvolvida para apresentar o sistema Emissor de Nota Fiscal",
     techs: ["React", "Vite", "TypeScript"],
-    repo: "https://github.com/philipeelopes/meu-portfolio",
-    demo: "https://philipeelopes.github.io/meu-portfolio",
+    repo: "https://github.com/philipeelopes/emissor-nota-fiscal",
+    demo: "https://emissor-nota-fiscal-j3p4.vercel.app/",
         images: [
-      "imagens/projects/embreve.jpg",
-      "imagens/projects/embreve.jpg",
-      "imagens/projects/embreve.jpg",
+      "imagens/projects/emissor/landing.png"
+      
     ],
 
   },
