@@ -76,7 +76,7 @@ export const projects = [
     repo: "https://github.com/philipeelopes/emissor-nota-fiscal",
     demo: "https://emissor-nota-fiscal-j3p4.vercel.app/",
         images: [
-      "imagens/projects/emissor/landing.png"
+      "imagens/projects/emissor/landig.png"
       
     ],
 
