@@ -81,4 +81,21 @@ export const projects = [
     ],
 
   },
+
+  {
+    id: 6,
+    title: "Dashboard Comercial Global",
+    description:
+      "Este projeto consiste na criação de um Dashboard Comercial interativo no Power BI",
+    techs: ["React", "Vite", "TypeScript"],
+    repo: "https://github.com/philipeelopes/powerbi-analise",
+    demo: "",
+        images: [
+      "imagens/Analize_Dados/powerBihome.png"
+      
+    ],
+
+  },
 ];
+
+
