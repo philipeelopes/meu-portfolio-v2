@@ -96,6 +96,21 @@ export const projects = [
     ],
 
   },
+
+   {
+    id: 6,
+    title: " Dashboard Executivo de Vendas",
+    description:
+      "Este projeto tem como objetivo simular um cenário real de análise de dados em varejo.",
+    techs: ["React", "Vite", "TypeScript"],
+    repo: "https://github.com/philipeelopes/dashboard-vendas-powerbi",
+    demo: "",
+        images: [
+      "imagens/Analize_Dados/Analise-varejo.png"
+      
+    ],
+
+  },
 ];
 
 
